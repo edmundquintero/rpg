@@ -1,0 +1,25 @@
+
+
+#console{
+  background-color: #EEE;
+  height: 400px;
+  overflow: auto;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+#console p{
+  margin: 0;
+  padding: 0;
+}
+span.heal{
+  color: #5cb85c;
+}
+span.spell{
+  color: orange;
+}
+span.damage{
+  color: red;
+}
+span.mana{
+  color: blue;
+}

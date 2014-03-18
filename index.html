@@ -2,6 +2,7 @@
 <html>
   <head>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/app.css">
   </head>
   <body>
   <hr />
@@ -17,14 +18,17 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
           <div class="col-md-4">
             <div class="progress">
               <div class="progress-bar progress-bar-info champMana" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
                 MP
               </div>
             </div>
+          </div>
+          <div class="col-md-2 col-md-offset-2">
+          <h4>Target</h4>
+          <button id="targetMe" name="Me">Self</button>
+          <button id="targetTestChamp2" name="TestChamp2">TestChamp2</button>
           </div>
         </div>
       </div>
@@ -48,9 +52,7 @@
               HP
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
+        </div>  
         <div class="col-md-4">
           <div class="progress">
             <div class="progress-bar progress-bar-info champMana" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
@@ -62,7 +64,16 @@
     </div>
   </div>
 
+  <hr />
   <div class="row"></div>
+
+</div>
+<div class="container">
+  <div class="row">
+    <div id="console" class="col-md-6">
+      
+    </div>
+  </div>
 
 </div>
   </body>
@@ -70,6 +81,7 @@
 
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="static/js/ui.js"></script>
     <script src="static/js/spells.js"></script>
     <script src="static/js/character.js"></script>
     <script src="static/js/rpg.js"></script>

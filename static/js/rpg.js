@@ -1,6 +1,6 @@
 $(function(){
 
-  var test = new Character("TestChamp1",{maxMana: 300});
+  var test = new Character("TestChamp1",{maxMana: 600});
   // test.maxMana = test.currentMana = 300;
   console.log(test);
 
@@ -11,20 +11,29 @@ $(function(){
   test2.attack-=5;
   console.log(test2);
 
+  var target = test2;
+  $('#targetMe').on('click', function(){
+    target = test;
+  });
+  $('#targetTestChamp2').on('click', function(){
+    target = test2;
+  });
+
+
   $('#fortify').on('click', function(){
-    test.fortify(test2);
+    test.fortify(target);
   });
   $('#cure').on('click', function(){
-    test.cure(test2);
+    test.cure(target);
   });
   $('#nourish').on('click', function(){
-    test.nourish(test2);
+    test.nourish(target);
   });
   $('#rejuvination').on('click', function(){
-    test.rejuvination(test2);
+    test.rejuvination(target);
   });
   $('#arcaneMissile').on('click', function(){
-    test.arcaneMissile(test2);
+    test.arcaneMissile(target);
   });
   $('#refresh').on('click', function(){
     test.refresh();

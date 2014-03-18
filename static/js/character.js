@@ -11,8 +11,6 @@ var Character = (function(){
 
     this.coreSpirit = this.currentSpirit = 4;
 
-    console.log(typeof options);
-
     if(typeof options == 'object'){
 
       this.maxHealth = (typeof options.maxHealth === 'number') ? options.maxHealth : this.maxHealth;
@@ -46,11 +44,12 @@ var Character = (function(){
   };
 
 //Mana Regeneration
-  Character.prototype.manaRegeneration = function(){
+  Character.prototype.manaRegeneration = function(exp){
     var that = this;
+    exp = (typeof exp == 'number') ? exp : .03;
     if(typeof manaRegen != 'undefined'){clearInterval(manaRegen);}
-    var exp = .03;
     manaRegen = setInterval(function(){
+      Ui.console("<span class='mana'>+"+that.maxMana*exp+" MP</span>");
       that.getMana(that.maxMana*exp); 
       if(that.currentMana >= that.maxMana){
         clearInterval(manaRegen);
@@ -91,6 +90,12 @@ var Character = (function(){
     $('#'+this.name+' .champMana').css('width',this.currentMana/this.maxMana*100+'%');
     return this;
   };
+
+  Character.prototype.buff = function(newBuff){
+    newBuff = (typeof newBuff == 'object') ? newBuff : {init: function(){return false;}};
+    newBuff.init();
+    return true;
+  }; 
 
   return Character;
 })();
